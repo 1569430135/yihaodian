@@ -1,1 +1,143 @@
-ssssssssssss
+首先安装git工具
+然后新建文件夹gitdemo
+1.git init 初始化本地仓库  链接上传
+2.git add . 把所有内容添加到 缓存区（stage /index）
+3.git commit -m "描述内容"  把缓存区内容 推送到本地仓库
+4.https://github.com/ 登录github账户
+
+git reset --hard HEAD^（HEAD~100）  回溯版本
+git status 查看状态
+git log    查看日志文件
+git checkout -- readme.txt   撤销修改
+git rm test.txt   删除文件
+
+
+5.git remote add origin git@github.com:1569430135/1-.git 定向
+6.git push -u origin master   本地仓库推送至远程仓库 
+  注意：可能会有报错
+1> 定向地址错误
+   git remote rm origin 
+   git remote add origin git@github.com:TIANXINGDASHENG/-.git
+   git push -u origin master 
+2> 先把远程仓库内容同步到本地仓库， 在推送
+   git pull origin master
+   git push origin master 
+
+下载
+7. git init 初始化   在克隆 git clone git@github.com:mangoyi/gitkills.git
+
+ 注册秘钥    ssh-keygen -t rsa -C ‘xielong196@163.com’   
+   id_rsa是秘钥   id_rsa.pub是公钥
+
+创建--合并分支 默认主分支 master   
+git branch dev  创建一个dev的分支
+git checkout dev 切换到dev分支
+git checkout –b dev  前边两个命令的简写
+git branch	查看当前分支
+git merge dev   用于合并指定分支到当前分支
+Git branch –d dev 删除了dev分支
+
+
+
+
+
+
+
+（1）  使用运行启动PowerShell
+
+
+
+（2）  使用命令进入你的库中（就是git init创建的库 ，其中有.git文件）
+
+
+
+（3）  使用git remote –v看下你有没有远程库如果没添加过 那么是空白的向下图我已经添加过所以有显示
+
+
+
+（4）  使用git add remote 远程库的别名 远程库地址    住：（远程库别名就是你给它起一个你更容易名字）如图：
+
+
+
+
+
+（5）  再使用git remote –v 来查一查你的远程库添加没如有继续下一步
+
+
+
+（6）  使用命令git push 远程库别名master将本地库中文件推到远程库中
+
+
+
+
+
+(7)    使用命令git pull 远程库别名   来将远程库中的文件拉到你本地库中
+
+
+
+
+
+
+
+
+
+
+
+1. 检查SSH keys是否存在
+输入下面的命令，如果有文件id_rsa.pub 或 id_dsa.pub，则直接进入步骤3将SSH key添加到GitHub中，否则进入第二步生成SSH key
+
+ls -al ~/.ssh
+# Lists the files in your .ssh directory, if they exist
+2. 生成新的ssh key
+第一步：生成public/private rsa key pair
+在命令行中输入ssh-keygen -t rsa -C "your_email@example.com"
+
+默认会在相应路径下（/your_home_path）生成id_rsa和id_rsa.pub两个文件，如下面代码所示
+
+ssh-keygen -t rsa -C "your_email@example.com"
+# Creates a new ssh key using the provided email
+Generating public/private rsa key pair.
+Enter file in which to save the key (/your_home_path/.ssh/id_rsa):
+第二步：输入passphrase（本步骤可以跳过）
+
+设置passphrase后，进行版本控制时，每次与GitHub通信都会要求输入passphrase，以避免某些“失误”
+
+Enter passphrase (empty for no passphrase): [Type a passphrase]
+Enter same passphrase again: [Type passphrase again]
+sample result:
+
+Your identification has been saved in /your_home_path/.ssh/id_rsa.
+Your public key has been saved in /your_home_path/.ssh/id_rsa.pub.
+The key fingerprint is:
+#01:0f:f4:3b:ca:85:d6:17:a1:7d:f0:68:9d:f0:a2:db your_email@example.com
+第三步：将新生成的key添加到ssh-agent中:
+
+# start the ssh-agent in the background
+eval "$(ssh-agent -s)"
+Agent pid 59566
+ssh-add ~/.ssh/id_rsa
+3. 将ssh key添加到GitHub中
+用自己喜欢的文本编辑器打开id_rsa.pub文件，里面的信息即为SSH key，将这些信息复制到GitHub的Add SSH key页面即可
+
+不同的操作系统，均有一些命令，直接将SSH key从文件拷贝到粘贴板中，如下：
+
+mac
+
+pbcopy < ~/.ssh/id_rsa.pub
+# Copies the contents of the id_rsa.pub file to your clipboard
+windows
+
+clip < ~/.ssh/id_rsa.pub
+# Copies the contents of the id_rsa.pub file to your clipboard
+linux
+
+sudo apt-get install xclip
+# Downloads and installs xclip. If you don't have `apt-get`, you might need to use another installer (like `yum`)
+
+xclip -sel clip < ~/.ssh/id_rsa.pub
+# Copies the contents of the id_rsa.pub file to your clipboard
+
+作者：Gevin
+链接：https://www.jianshu.com/p/31cbbbc5f9fa/
+來源：简书
+简书著作权归作者所有，任何形式的转载都请联系作者获得授权并注明出处。
