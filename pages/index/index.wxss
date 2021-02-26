@@ -1,0 +1,7 @@
+.canvas-code {
+  width: 510rpx;
+  height: 470rpx;
+  margin: 0 auto;
+  margin-left: 135rpx;
+  margin-top: 10px;
+}

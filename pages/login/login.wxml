@@ -1,0 +1,9 @@
+<!--pages/login/login.wxml-->
+<button bindtap="login">登录</button>
+<button bindtap="checksession">登录是否过期</button>
+<button bindtap="info">获取用户信息</button>
+<image src="{{avatarUrl}}"></image>
+<text>{{city}}</text>
+<text>{{country}}</text>
+<text>{{nickName}}</text>
+<text>{{province}}</text>

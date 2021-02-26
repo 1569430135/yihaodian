@@ -1,0 +1,45 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "navigationBarTitleText": "Demo"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "pages/img/jd_37.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "iconPath": "pages/img/jd_37.png",
+        "text": "日志"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "iconPath": "pages/img/jd_37.png",
+        "text": "日志"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "iconPath": "pages/img/jd_37.png",
+        "text": "日志"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "iconPath": "pages/img/jd_37.png",
+        "text": "日志"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true,
+  "sitemapLocation": "sitemap.json"
+}
